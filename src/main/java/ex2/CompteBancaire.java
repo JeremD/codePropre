@@ -1,10 +1,9 @@
 package ex2;
 
 /**
- * Représente un compte bancaire de type compte courante (type=CC) ou livret A
- * (type=LA)
+ * Compte bancaire de type compte courant
  * 
- * @author DIGINAMIC
+ * @author DIGINAMIC, Jeremy
  */
 public class CompteBancaire {
 
@@ -14,42 +13,23 @@ public class CompteBancaire {
 	/** valeur du decouvert */
 	protected double decouvert;
 
-	/** taux de rémunération */
-	protected double tauxRemuneration;
-
 	/** type de compte */
-	protected String type;
+	public static final String TYPE_COMPTE = "Compte courant";
 
 	/**
-	 * @param solde
-	 * @param decouvert
-	 * @param type
-	 */
-	public CompteBancaire(String type, double solde, double decouvert) {
-		super();
-		this.type = type;
-		this.solde = solde;
-		this.decouvert = decouvert;
-	}
-
-	/**
-	 * Ce constructeur est utilisé pour créer un compte de type Livret A
+	 * Constructeur
 	 * 
-	 * @param type             = LA
-	 * @param solde            représente le solde du compte
-	 * @param decouvert        représente le découvert autorisé
-	 * @param tauxRemuneration représente le taux de rémunération du livret A
+	 * @param solde     solde du compte
+	 * @param decouvert découvert autorisé
 	 */
-	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
+	public CompteBancaire(double solde, double decouvert) {
 		super();
-		this.type = type;
 		this.solde = solde;
 		this.decouvert = decouvert;
-		this.tauxRemuneration = tauxRemuneration;
 	}
 
 	/**
-	 * Ajoute un montant au solde
+	 * Ajouter un montant du compte
 	 * 
 	 * @param montant
 	 */
@@ -58,7 +38,7 @@ public class CompteBancaire {
 	}
 
 	/**
-	 * Ajoute un montant au solde
+	 * Débiter un montant du compte
 	 * 
 	 * @param montant
 	 */
@@ -80,7 +60,7 @@ public class CompteBancaire {
 	/**
 	 * Setter
 	 * 
-	 * @param solde the solde to set
+	 * @param solde to set
 	 */
 	public void setSolde(double solde) {
 		this.solde = solde;
@@ -98,28 +78,10 @@ public class CompteBancaire {
 	/**
 	 * Setter
 	 * 
-	 * @param decouvert the decouvert to set
+	 * @param decouvert to set
 	 */
 	public void setDecouvert(double decouvert) {
 		this.decouvert = decouvert;
-	}
-
-	/**
-	 * Getter for tauxRemuneration
-	 * 
-	 * @return the tauxRemuneration
-	 */
-	public double getTauxRemuneration() {
-		return tauxRemuneration;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param tauxRemuneration the tauxRemuneration to set
-	 */
-	public void setTauxRemuneration(double tauxRemuneration) {
-		this.tauxRemuneration = tauxRemuneration;
 	}
 
 	/**
@@ -128,15 +90,6 @@ public class CompteBancaire {
 	 * @return the type
 	 */
 	public String getType() {
-		return type;
-	}
-
-	/**
-	 * Setter
-	 * 
-	 * @param type the type to set
-	 */
-	public void setType(String type) {
-		this.type = type;
+		return TYPE_COMPTE;
 	}
 }
